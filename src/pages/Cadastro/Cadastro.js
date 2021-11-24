@@ -1,10 +1,10 @@
-import React from 'react'
-import Api from '../../api/api';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import Api from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
   const navigate = useNavigate();
-  
+
   const handleSubmit = async (evento) => {
     evento.preventDefault();
     // target = quem disparou o evento
@@ -20,21 +20,21 @@ const Cadastro = () => {
       descricao,
       prioridade,
       pstatus,
-      prazo
-    }
+      prazo,
+    };
 
     const request = await Api.fetchPost(tarefa);
-    if(request.status === 500) {
-      alert('ERRO NO SERVIDOR')
+    if (request.status === 500) {
+      alert("ERRO NO SERVIDOR");
     }
     const result = await request.json();
-    if(result.error) {
+    if (result.error) {
       console.log(result.error);
-    }else {
+    } else {
       alert(result.message);
-      navigate('/');
+      navigate("/");
     }
-  }
+  };
 
   return (
     <div className="container">
@@ -49,54 +49,88 @@ const Cadastro = () => {
         <div className="card-body">
           <form onSubmit={handleSubmit}>
             <div className="row mb-4">
-              <div className="col-4">
+              <div className="col-6">
                 <div className="form-group">
                   <label htmlFor="titulo">Nome da Tarefa:</label>
-                  <input id="titulo" className="form-control" type="text" placeholder="Titulo da Tarefa" name="titulo"/>
+                  <input
+                    id="titulo"
+                    className="form-control"
+                    type="text"
+                    placeholder="Titulo da Tarefa"
+                    name="titulo"
+                  />
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-6">
                 <div className="form-group">
                   <label htmlFor="descricao">Descrição:</label>
-                  <input id="descricao" type="text" className="form-control" placeholder="Descrição da Tarefa" name="descricao"/>
+                  <input
+                    id="descricao"
+                    type="text"
+                    className="form-control"
+                    placeholder="Descrição da Tarefa"
+                    name="descricao"
+                  />
                 </div>
               </div>
               <div className="col-4">
                 <div className="form-group">
                   <label htmlFor="prioridade">Prioridade:</label>
                   <div class="input-field col s12 m4">
-                <select name="prioridade">
-                  <option value="" disabled selected>Prioridade</option>
-                  <option value="Baixa">Baixa</option>
-                  <option value="Media">Media</option>
-                  <option value="Alta">Alta</option>
-                </select>
-          </div>                </div>
+                    <select name="prioridade">
+                      <option value="" disabled selected>
+                        Prioridade
+                      </option>
+                      <option value="Baixa">Baixa</option>
+                      <option value="Media">Media</option>
+                      <option value="Alta">Alta</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="row">
               <div className="col-4">
                 <div className="form-group">
                   <label htmlFor="pstatus">Status da Tarefa:</label>
-                  <input id="pstatus" type="text" className="form-control" placeholder="URL da capa do album" name="pstatus"/>
+                  <div class="input-field col s12 m4">
+                    <select name="pstatus">
+                      <option value="" disabled selected>
+                        Status
+                      </option>
+                      <option value="Fazer">Fazer</option>
+                      <option value="Fazendo">Fazendo</option>
+                      <option value="Feito">Feito</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div className="col-4">
                 <div className="form-group">
                   <label htmlFor="prazo">Prazo da Tarefa:</label>
-                  <input id="prazo" type="date" className="form-control" placeholder="Duraçao da tarefa" name="prazo"/>
+                  <input
+                    id="prazo"
+                    type="date"
+                    className="form-control"
+                    placeholder="Duraçao da tarefa"
+                    name="prazo"
+                  />
                 </div>
               </div>
               <div className="col-4 d-flex align-items-end justify-content-around">
-                <button type="submit" className="btn btn-success">Enviar</button>
-                <button type="button" className="btn btn-danger">Voltar</button>
+                <button type="submit" className="btn btn-success">
+                  Enviar
+                </button>
+                <button type="button" className="btn btn-danger">
+                  Voltar
+                </button>
               </div>
             </div>
           </form>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Cadastro
+export default Cadastro;

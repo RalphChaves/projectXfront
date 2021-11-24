@@ -9,10 +9,10 @@ const Card = (props) => {
       <div className="card">
         <div className="card-body">
           <h5 className="card-title">{tarefa.titulo}</h5>
-          <span className="badge bg-primary">{tarefa.descricao}</span>
-          <p>{tarefa.prioridade}</p>
+          <span className="badge bg-primary">{tarefa.prioridade}</span>
+          {/* <p>{tarefa.descricao}</p>
           <p>{tarefa.pstatus}</p>
-          <p>{tarefa.prazo}</p>
+          <p>{tarefa.prazo}</p> */}
         </div>
       </div>
     </Link>

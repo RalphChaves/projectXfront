@@ -53,7 +53,7 @@ const View = () => {
             <h1 className="text-center my-4"><b>Titulo: </b>{tarefa.titulo}</h1>
             <h2 className="text-center"><b>Descrição: </b>{tarefa.descricao}</h2>
             <h3 className="text-center"><b>Prioridade: </b> {tarefa.prioridade}</h3>
-            <h4 className="text-center"><b>Status: </b>{tarefa.status}</h4>
+            <h4 className="text-center"><b>Status: </b>{tarefa.pstatus}</h4>
             <h5 className="text-center"><b>Prazo: </b>{tarefa.prazo}</h5>
             <h6 className="text-center"><b>Data de Criação: </b>{tarefa.dataCriacao}</h6>
             <div className="btn-group mt-3 w-100">
