@@ -1,10 +1,10 @@
 import './App.css';
 import Header from './components/shared/Header/Header';
-import Home from '../pages/Home/Home';
-import Cadastro from '../pages/Cadastro/Cadastro';
+import Home from './pages/Home/Home';
+import Cadastro from './pages/Cadastro/Cadastro';
 import { Routes, Route } from 'react-router-dom';
-import View from '../pages/View/View';
-import Edit from '../pages/Edit/Edit';
+import View from './pages/View/View';
+import Edit from './pages/Edit/Edit';
 
 // Route - Define qual componente(element) vai aparecer na tela de acordo com o seu caminho (path);
 // Routes - renderiza o elemento que melhor correponde a rota atual.
