@@ -1,5 +1,5 @@
 import React from 'react'
-import ListTarefa from '../../src/components/structure/ListTarefa';
+import ListTarefa from '../../components/structure/ListTarefa';
 
 const Home = () => {
   return (
@@ -10,4 +10,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Home

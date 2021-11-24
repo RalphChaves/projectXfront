@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom';
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
-import Api from '../../src/api/api';
+import Api from '../../api/api';
 
 const View = () => {
   // inicializa o estado tarefa para poder fazer as alteracoes do dom.
@@ -18,7 +18,7 @@ const View = () => {
   const FechaModal = () => setOpen(false);
 
   // chama o use effect sem parametro de dependencia (executa uma vez ao renderizar o componente)
-  // chamando a funcao getMusicaById
+  // chamando a funcao getTarefaById
   useEffect(() => {
     getTarefaById();
   }, [])
@@ -46,7 +46,7 @@ const View = () => {
   }
 
   return (
-    <div className="container">
+    <div className="Item-field">
       <div className="row my-5">
           <div className="col-6">
           <div className="card my-5">

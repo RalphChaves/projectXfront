@@ -1,5 +1,5 @@
 import React from 'react'
-import Api from '../../src/api/api';
+import Api from '../../api/api';
 import { useNavigate } from 'react-router-dom';
 
 const Cadastro = () => {
@@ -15,7 +15,7 @@ const Cadastro = () => {
     const pstatus = evento.target.pstatus.value;
     const prazo = evento.target.prazo.value;
 
-    const musica = {
+    const tarefa = {
       titulo,
       descricao,
       prioridade,
@@ -23,7 +23,7 @@ const Cadastro = () => {
       prazo
     }
 
-    const request = await Api.fetchPost(musica);
+    const request = await Api.fetchPost(tarefa);
     if(request.status === 500) {
       alert('ERRO NO SERVIDOR')
     }
@@ -64,8 +64,14 @@ const Cadastro = () => {
               <div className="col-4">
                 <div className="form-group">
                   <label htmlFor="prioridade">Prioridade:</label>
-                  <input id="prioridade" type="text" className="form-control" placeholder="Prioridade da Tarefa" name="prioridade"/>
-                </div>
+                  <div class="input-field col s12 m4">
+                <select name="prioridade">
+                  <option value="" disabled selected>Prioridade</option>
+                  <option value="Baixa">Baixa</option>
+                  <option value="Media">Media</option>
+                  <option value="Alta">Alta</option>
+                </select>
+          </div>                </div>
               </div>
             </div>
             <div className="row">
@@ -78,7 +84,7 @@ const Cadastro = () => {
               <div className="col-4">
                 <div className="form-group">
                   <label htmlFor="prazo">Prazo da Tarefa:</label>
-                  <input id="prazo" type="time" className="form-control" min="00:00" max="10:00" placeholder="Duraçao da musica" name="prazo"/>
+                  <input id="prazo" type="date" className="form-control" placeholder="Duraçao da tarefa" name="prazo"/>
                 </div>
               </div>
               <div className="col-4 d-flex align-items-end justify-content-around">

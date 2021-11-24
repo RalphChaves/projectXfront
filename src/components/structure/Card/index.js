@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Card = (props) => {
-  // objeto tarefa
+  
   const tarefa = props.data;
   return (
     <Link to={`/view/${tarefa._id}`} className="col">
