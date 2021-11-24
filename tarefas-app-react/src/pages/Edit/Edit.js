@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Api from "../../src/api/api";
+import Api from "../../api/api";
 
 const Edit = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Edit = () => {
   const getTarefaById = async () => {
     const request = await Api.fetchGetById(id);
     const tarefa = await request.json();
-    setMusica(tarefa);
+    setTarefa(tarefa);
   };
 
   const handleFieldsChange = (evento) => {
@@ -35,7 +35,7 @@ const Edit = () => {
     // atualiza os campos do objeto de forma dinamica de acordo com o input que o usuario digitou
     tarefaEdit[evento.target.name] = evento.target.value;
     // atualzo estado tarefa
-    setMusica(tarefaEdit);
+    setTarefa(tarefaEdit);
   }
 
   const handleSubmit = async (evento) => {

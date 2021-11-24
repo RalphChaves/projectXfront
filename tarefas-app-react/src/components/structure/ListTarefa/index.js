@@ -32,8 +32,7 @@ const ListTarefa = () => {
 
   return (
     <div className="row row-cols-1 row-cols-md-3 mt-3 g-4">
-      {/* <button onClick={handleButton}>Incrementa</button>
-      <p>{count}</p> */}
+      
       {tarefas.map((tarefa) => (
         <Card data={tarefa} key={tarefa._id}/>
       ))}
