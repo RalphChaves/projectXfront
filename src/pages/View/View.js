@@ -46,7 +46,7 @@ const View = () => {
   }
 
   return (
-    <div className="Item-field">
+    <div className="Item-field " >
       <div className="row my-5">
           <div className="col-6">
           <div className="card my-5">

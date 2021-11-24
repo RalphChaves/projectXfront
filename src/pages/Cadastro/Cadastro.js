@@ -38,7 +38,7 @@ const Cadastro = () => {
 
   return (
     <div className="container">
-      <div className="card mt-4">
+      <div className="card bg-info mt-4">
         <div className="card-title">
           <div className="row">
             <div className="col">
@@ -93,7 +93,7 @@ const Cadastro = () => {
               <div className="col-4">
                 <div className="form-group">
                   <label htmlFor="pstatus">Status da Tarefa:</label>
-                  <div class="input-field col s12 m4">
+                  <div class="input-field col-2 s12 m4">
                     <select name="pstatus">
                       <option value="" disabled selected>
                         Status
@@ -120,9 +120,6 @@ const Cadastro = () => {
               <div className="col-4 d-flex align-items-end justify-content-around">
                 <button type="submit" className="btn btn-success">
                   Enviar
-                </button>
-                <button type="button" className="btn btn-danger">
-                  Voltar
                 </button>
               </div>
             </div>

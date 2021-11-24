@@ -20,7 +20,7 @@ const ListTarefa = () => {
   }
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 mt-3 g-2">
+    <div className="row row-cols-1 row-cols-md-6 mt-3 g-4">
       
       {tarefas.map((tarefa) => (
         <Card data={tarefa} key={tarefa._id}/>

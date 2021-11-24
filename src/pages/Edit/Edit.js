@@ -48,7 +48,7 @@ const Edit = () => {
 
   return (
     <div className="container">
-      <div className="card mt-4">
+      <div className="card mt-4 bg-warning">
         <div className="card-title">
           <div className="row">
             <div className="col">
@@ -122,23 +122,18 @@ const Edit = () => {
                   <label htmlFor="prazo">Prazo da Tarefa:</label>
                   <input
                     id="prazo"
-                    type="time"
+                    type="date"
                     onChange={handleFieldsChange}
                     value={tarefa.prazo}
                     className="form-control"
-                    min="00:00"
-                    max="10:00"
                     placeholder="Prazo da Tarefa"
                     name="prazo"
                   />
                 </div>
               </div>
               <div className="col-4 d-flex align-items-end justify-content-around">
-                <button type="submit" className="btn btn-success">
+                <button type="submit" className="btn btn-dark">
                   Enviar
-                </button>
-                <button type="button" className="btn btn-danger">
-                  Voltar
                 </button>
               </div>
             </div>
